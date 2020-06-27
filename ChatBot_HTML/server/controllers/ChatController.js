@@ -60,7 +60,21 @@ const updateChat = (req,res,next ) => {
     })
 }
 
+const showChat=(req,res,next)=>{
+    ChatHistory.find()
+    .then(response=>{
+        res.json({
+            response
+        })
+    })
+    .catch(error=>{
+        res.json({
+            message:'An error occured'
+        })
+    })
+}
+
 module.exports = {
-    registerChat, updateChat,
+    registerChat, updateChat, showChat
 }
 

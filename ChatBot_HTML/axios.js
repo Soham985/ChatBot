@@ -29,6 +29,10 @@ function login(event){
   var username=document.getElementById('username').value;
   var password=document.getElementById('password').value;
 
+  if(username=='admin@gmail.com' && password=='password')
+  {
+    window.location.href="admin.html";
+  }
   axios.post('http://localhost:3000/api/login',{
     username: `${username}`,
     password:`${password}`
